@@ -46,4 +46,8 @@ app.post('/send', async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('Server running at http://localhost:3000'));
+// --- THE FIX IS HERE ---
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
+});
