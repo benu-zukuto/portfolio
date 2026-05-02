@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benu — Creative Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot hidden md:block"></div>
+  <div class="cursor-outline hidden md:block"></div>
+
+  <!-- Grain Overlay -->
+  <div class="grain"></div>
+
+  <!-- Mobile Menu (fullscreen overlay) -->
+  <div class="mobile-menu md:hidden">
+    <a href="#work"    class="hover-target" data-cursor="hover">WORK</a>
+    <a href="#about"   class="hover-target" data-cursor="hover">ABOUT</a>
+    <a href="#contact" class="hover-target" data-cursor="hover">CONTACT</a>
+  </div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="#" class="nav-logo hover-target" data-cursor="hover">B.</a>
+    <ul class="nav-links">
+      <li><a href="#work"    class="hover-target" data-cursor="hover">WORK</a></li>
+      <li><a href="#about"   class="hover-target" data-cursor="hover">ABOUT</a></li>
+      <li><a href="#contact" class="hover-target" data-cursor="hover">CONTACT</a></li>
+    </ul>
+    <button class="nav-hamburger md:hidden hover-target" data-cursor="hover" aria-label="Toggle menu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20 pointer-events-none"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-7xl mx-auto">
+      <p class="text-sm md:text-base tracking-[0.3em] text-gray-400 mb-6 reveal">AI &amp; EMBEDDED SYSTEMS DEVELOPER</p>
+      <h1 class="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-none">
+        <span class="scramble-text block hover-target" data-cursor="hover" data-text="BUILDING">BUILDING</span>
+        <span class="scramble-text block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 hover-target" data-cursor="hover" data-text="INTELLIGENCE">INTELLIGENCE</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 reveal delay-200">
+        From PyTorch neural networks to ESP32 hardware, I craft seamless connections between the digital and physical worlds.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center reveal delay-400">
+        <a href="#work"    class="magnetic-btn px-8 py-4 bg-white text-black font-semibold rounded-full hover-target" data-cursor="hover">View Projects</a>
+        <a href="#contact" class="magnetic-btn px-8 py-4 border border-white/30 rounded-full hover:bg-white/10 transition-colors hover-target" data-cursor="hover">Collaborate</a>
+      </div>
+    </div>
+
+    <div class="absolute top-1/4 left-10 w-32 h-32 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-10 w-40 h-40 bg-pink-500/30 rounded-full blur-3xl animate-pulse delay-700"></div>
+  </section>
+
+  <!-- ── Marquee ── -->
+  <div class="py-8 border-y border-white/10 bg-white/5 backdrop-blur-sm">
+    <div class="marquee-container">
+      <div class="marquee-content text-4xl md:text-6xl font-bold tracking-tighter">
+        <span class="mx-8 text-white/20">PYTORCH</span>
+        <span class="mx-8 text-white">ESP32</span>
+        <span class="mx-8 text-white/20">C# / SQL</span>
+        <span class="mx-8 text-white">PYTHON</span>
+        <span class="mx-8 text-white/20">LINUX</span>
+        <span class="mx-8 text-white">IOT</span>
+        <span class="mx-8 text-white/20">PYTORCH</span>
+        <span class="mx-8 text-white">ESP32</span>
+        <span class="mx-8 text-white/20">C# / SQL</span>
+        <span class="mx-8 text-white">PYTHON</span>
+        <span class="mx-8 text-white/20">LINUX</span>
+        <span class="mx-8 text-white">IOT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Work / Projects ── -->
+  <section id="work" class="py-32 px-6 max-w-7xl mx-auto">
+    <h2 class="text-6xl md:text-8xl font-bold tracking-tighter mb-20 reveal">CURRENT<br>STACK</h2>
+
+    <div class="grid gap-8 md:grid-cols-2">
+
+      <div class="project-card group relative overflow-hidden rounded-2xl bg-gray-900 aspect-[4/3] hover-target" data-cursor="hover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="AI Agent" class="project-image absolute inset-0 w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 p-8 z-20">
+          <span class="text-sm text-purple-400 font-medium tracking-wider">01 / GEN AI</span>
+          <h3 class="text-3xl font-bold mt-2 glitch-hover">Voice Assistant via LiveKit</h3>
+          <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Voice-responsive agent using LiveKit and the uv package manager.</p>
+        </div>
+      </div>
+
+      <div class="project-card group relative overflow-hidden rounded-2xl bg-gray-900 aspect-[4/3] mt-0 md:mt-32 hover-target" data-cursor="hover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&q=80" alt="IoT Lighting" class="project-image absolute inset-0 w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 p-8 z-20">
+          <span class="text-sm text-pink-400 font-medium tracking-wider">02 / EMBEDDED SYSTEMS</span>
+          <h3 class="text-3xl font-bold mt-2 glitch-hover">Smart Classroom Lighting</h3>
+          <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">PIR-triggered energy management system with ESP32 microcontrollers.</p>
+        </div>
+      </div>
+
+      <div class="project-card group relative overflow-hidden rounded-2xl bg-gray-900 aspect-[4/3] hover-target" data-cursor="hover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80" alt="TTS" class="project-image absolute inset-0 w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 p-8 z-20">
+          <span class="text-sm text-purple-400 font-medium tracking-wider">03 / APP</span>
+          <h3 class="text-3xl font-bold mt-2 glitch-hover">Custom TTS Application</h3>
+          <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Building a custom text-to-speech application with advanced voice synthesis for Android.</p>
+        </div>
+      </div>
+
+      <div class="project-card group relative overflow-hidden rounded-2xl bg-gray-900 aspect-[4/3] mt-0 md:mt-32 hover-target" data-cursor="hover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=800&q=80" alt="Drone" class="project-image absolute inset-0 w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 p-8 z-20">
+          <span class="text-sm text-pink-400 font-medium tracking-wider">04 / ROBOTICS</span>
+          <h3 class="text-3xl font-bold mt-2 glitch-hover">ESP32 Drone Build</h3>
+          <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Custom flight controller integration on the ESP32-S3 hardware.</p>
+        </div>
+      </div>
+
+      <div class="project-card group relative overflow-hidden rounded-2xl bg-gray-900 aspect-[4/3] hover-target" data-cursor="hover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+        <img src="https://i.ytimg.com/vi/HxVAzpP3UWg/maxresdefault.jpg" alt="BLASTER AI" class="project-image absolute inset-0 w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 p-8 z-20">
+          <span class="text-sm text-purple-400 font-medium tracking-wider">05 / AI</span>
+          <h3 class="text-3xl font-bold mt-2 glitch-hover">'BLASTER' Voice Assistant AI</h3>
+          <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Developing an AI-powered voice assistant with natural language processing capabilities which runs locally.</p>
+        </div>
+      </div>
+
+      <div class="project-card group relative overflow-hidden rounded-2xl bg-gray-900 aspect-[4/3] mt-0 md:mt-32 hover-target" data-cursor="hover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+        <img src="https://img.freepik.com/premium-photo/led-screen-close-up_303714-13425.jpg" alt="LED Setup" class="project-image absolute inset-0 w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 p-8 z-20">
+          <span class="text-sm text-pink-400 font-medium tracking-wider">06 / LED</span>
+          <h3 class="text-3xl font-bold mt-2 glitch-hover">HD2020 LED Setup</h3>
+          <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Designing and implementing a dynamic LED lighting system for live performances.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section id="about" class="py-32 px-6 border-t border-white/10">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <h2 class="text-6xl md:text-7xl font-bold tracking-tighter mb-8">BEYOND<br>THE SCREEN</h2>
+        <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+          <p>I'm a student developer focusing on the bridge between high-level AI and low-level embedded hardware. Currently, I'm diving deep into C# and SQL while continuing my journey with PyTorch and ESP32 project development.</p>
+          <p>Whether it's configuring a real-time voice agent or troubleshooting a Linux kernel, I thrive on complex problem-solving and building functional, intelligent systems.</p>
+        </div>
+        <div class="mt-12 grid grid-cols-2 gap-8">
+          <div>
+            <span class="text-4xl font-bold text-purple-400">Ubuntu</span>
+            <p class="text-sm text-gray-400 mt-2">Primary OS Environment</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative reveal delay-200">
+        <div class="aspect-square rounded-2xl overflow-hidden bg-gray-800 relative">
+          <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&q=80" alt="Tech Setup" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover-target" data-cursor="hover">
+          <div class="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent mix-blend-multiply"></div>
+        </div>
+        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-pink-500 rounded-full blur-3xl opacity-50"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ── -->
+  <section class="py-20 px-6 border-t border-white/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-wrap gap-4 justify-center reveal">
+        <span class="px-6 py-3 border border-white/20 rounded-full text-lg hover:bg-white hover:text-black transition-all cursor-default hover-target" data-cursor="hover">Python</span>
+        <span class="px-6 py-3 border border-white/20 rounded-full text-lg hover:bg-white hover:text-black transition-all cursor-default hover-target" data-cursor="hover">C#</span>
+        <span class="px-6 py-3 border border-white/20 rounded-full text-lg hover:bg-white hover:text-black transition-all cursor-default hover-target" data-cursor="hover">SQL</span>
+        <span class="px-6 py-3 border border-white/20 rounded-full text-lg hover:bg-white hover:text-black transition-all cursor-default hover-target" data-cursor="hover">ESP32-S3</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact" class="py-32 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h2 class="text-6xl md:text-8xl font-bold tracking-tighter mb-8 reveal">LET'S CONNECT</h2>
+      <p class="text-xl text-gray-400 mb-12 reveal">Always open to collaboration on AI or IoT projects.</p>
+
+      <form class="contact-form space-y-6 max-w-xl mx-auto reveal">
+        <div class="form-group">
+          <input
+            type="email"
+            name="email"
+            placeholder="your@email.com"
+            class="form-input hover-target"
+            data-cursor="hover"
+            autocomplete="email"
+          >
+          <p class="form-error-msg">Please enter a valid email address.</p>
+        </div>
+
+        <div class="form-group">
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Message..."
+            class="form-textarea hover-target"
+            data-cursor="hover"
+          ></textarea>
+          <p class="form-error-msg">Message can't be empty.</p>
+        </div>
+
+        <button type="submit" class="submit-btn magnetic-btn hover-target" data-cursor="hover">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-spinner">
+            <svg class="spinner-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="py-8 px-6 border-t border-white/10 text-center text-gray-500 text-sm">
+    <p>&copy; 2026 Benu. Developed in the pursuit of intelligence.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
