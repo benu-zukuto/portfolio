@@ -1,29 +1,14 @@
 require('dotenv').config();
-const express    = require('express');
-const nodemailer = require('nodemailer');
-const cors       = require('cors');
-const dns = require('dns');
+const express = require('express');
+const cors    = require('cors');
+const { Resend } = require('resend');
 
-const app = express();
+const app    = express();
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 app.use(express.json());
 app.use(cors());
-
-// Serve your portfolio files
 app.use(express.static('.'));
-
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
-  family: 4,
-  dnsLookup: (hostname, options, callback) => {
-    dns.lookup(hostname, { ...options, family: 4 }, callback);
-  },
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_PASS
-  }
-});
 
 app.post('/send', async (req, res) => {
   const { email, message } = req.body;
@@ -33,10 +18,10 @@ app.post('/send', async (req, res) => {
   }
 
   try {
-    await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
-      to:   process.env.GMAIL_USER,   // messages come TO you
-      replyTo: email,                 // so you can reply to the visitor
+    await resend.emails.send({
+      from:    'Benu Portfolio <onboarding@resend.dev>', // temporary
+      to:      process.env.GMAIL_USER,
+      replyTo: email,
       subject: `New message from ${email}`,
       html: `
         <h2>New Portfolio Message</h2>
@@ -53,6 +38,5 @@ app.post('/send', async (req, res) => {
   }
 });
 
-// ✅ Uses Railway's dynamic port, falls back to 3000 locally
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
