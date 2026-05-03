@@ -2,6 +2,7 @@ require('dotenv').config();
 const express    = require('express');
 const nodemailer = require('nodemailer');
 const cors       = require('cors');
+const dns = require('dns');
 
 const app = express();
 app.use(express.json());
@@ -12,9 +13,12 @@ app.use(express.static('.'));
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
-  port: 587,              // 587 works on Railway (465 is blocked)
-  secure: false,          // use STARTTLS not SSL
-  family: 4,              // force IPv4 (fixes ENETUNREACH)
+  port: 587,
+  secure: false,
+  family: 4,
+  dnsLookup: (hostname, options, callback) => {
+    dns.lookup(hostname, { ...options, family: 4 }, callback);
+  },
   auth: {
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_PASS
