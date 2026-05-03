@@ -11,10 +11,13 @@ app.use(cors());
 app.use(express.static('.'));
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,              // 587 works on Railway (465 is blocked)
+  secure: false,          // use STARTTLS not SSL
+  family: 4,              // force IPv4 (fixes ENETUNREACH)
   auth: {
     user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_PASS   // App Password, not your real password
+    pass: process.env.GMAIL_PASS
   }
 });
 
