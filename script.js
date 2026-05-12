@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             char = this.randomChar();
             this.queue[i].char = char;
           }
-          output += `<span style="color:#a855f7">${char}</span>`;
+          output += `<span style="color:#3b82f6">${char}</span>`;
         } else {
           output += from;
         }
